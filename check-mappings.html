@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html lang="te">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Telugu Dictionary Mapping Checker</title>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Telugu:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Noto Sans Telugu', Arial, sans-serif;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            background: #f5f5f5;
+        }
+        
+        .container {
+            background: white;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        
+        h1 {
+            color: #333;
+            text-align: center;
+            margin-bottom: 30px;
+        }
+        
+        .test-section {
+            margin-bottom: 30px;
+            padding: 20px;
+            background: #f8f9fa;
+            border-radius: 8px;
+            border-left: 4px solid #007bff;
+        }
+        
+        .test-title {
+            font-size: 1.2rem;
+            font-weight: bold;
+            color: #007bff;
+            margin-bottom: 15px;
+        }
+        
+        .test-item {
+            margin-bottom: 15px;
+            padding: 15px;
+            background: white;
+            border-radius: 5px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .word-pair {
+            font-size: 1.1rem;
+        }
+        
+        .telugu-word {
+            color: #28a745;
+            font-weight: bold;
+        }
+        
+        .english-word {
+            color: #6c757d;
+        }
+        
+        button {
+            padding: 8px 20px;
+            background: #007bff;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 14px;
+        }
+        
+        button:hover {
+            background: #0056b3;
+        }
+        
+        .status {
+            padding: 5px 10px;
+            border-radius: 3px;
+            font-size: 12px;
+            font-weight: bold;
+        }
+        
+        .status.pass {
+            background: #d4edda;
+            color: #155724;
+        }
+        
+        .status.fail {
+            background: #f8d7da;
+            color: #721c24;
+        }
+        
+        .instructions {
+            background: #e9ecef;
+            padding: 20px;
+            border-radius: 8px;
+            margin-bottom: 30px;
+            line-height: 1.6;
+        }
+        
+        .file-check {
+            margin-top: 20px;
+            padding: 20px;
+            background: #fff3cd;
+            border-radius: 8px;
+            border-left: 4px solid #ffc107;
+        }
+        
+        code {
+            background: #f1f1f1;
+            padding: 2px 6px;
+            border-radius: 3px;
+            font-family: monospace;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>🔍 Telugu Dictionary Mapping Checker</h1>
+        
+        <div class="instructions">
+            <strong>How to use this tool:</strong>
+            <ol>
+                <li>Save this file in your <code>github-deploy</code> folder</li>
+                <li>Open it in your browser</li>
+                <li>Click each "Check" button to test if files exist</li>
+                <li>The tool will try to load each file and verify mappings</li>
+            </ol>
+        </div>
+        
+        <div class="test-section">
+            <div class="test-title">📝 Common Word Mappings to Test</div>
+            
+            <div class="test-item">
+                <div class="word-pair">
+                    <span class="telugu-word">అమ్మ</span> ↔ 
+                    <span class="english-word">mother</span>
+                </div>
+                <button onclick="checkMapping('అమ్మ', 'mother', 1)">Check</button>
+                <span id="status-1"></span>
+            </div>
+            
+            <div class="test-item">
+                <div class="word-pair">
+                    <span class="telugu-word">నాన్న</span> ↔ 
+                    <span class="english-word">father</span>
+                </div>
+                <button onclick="checkMapping('నాన్న', 'father', 2)">Check</button>
+                <span id="status-2"></span>
+            </div>
+            
+            <div class="test-item">
+                <div class="word-pair">
+                    <span class="telugu-word">నీరు</span> ↔ 
+                    <span class="english-word">water</span>
+                </div>
+                <button onclick="checkMapping('నీరు', 'water', 3)">Check</button>
+                <span id="status-3"></span>
+            </div>
+            
+            <div class="test-item">
+                <div class="word-pair">
+                    <span class="telugu-word">పుస్తకం</span> ↔ 
+                    <span class="english-word">book</span>
+                </div>
+                <button onclick="checkMapping('పుస్తకం', 'book', 4)">Check</button>
+                <span id="status-4"></span>
+            </div>
+            
+            <div class="test-item">
+                <div class="word-pair">
+                    <span class="telugu-word">ప్రేమ</span> ↔ 
+                    <span class="english-word">love</span>
+                </div>
+                <button onclick="checkMapping('ప్రేమ', 'love', 5)">Check</button>
+                <span id="status-5"></span>
+            </div>
+        </div>
+        
+        <div class="file-check">
+            <strong>Manual File Check Instructions:</strong>
+            <ol>
+                <li>Go to your <code>word</code> folder</li>
+                <li>Open <code>అమ్మ.html</code> - Does it show "mother" as the meaning?</li>
+                <li>Go to your <code>english</code> folder</li>
+                <li>Open <code>mother.html</code> - Does it show "అమ్మ" and other Telugu words?</li>
+                <li>Check if clicking links between pages works</li>
+            </ol>
+        </div>
+        
+        <div class="test-section">
+            <div class="test-title">🔧 What to Look For in Each File</div>
+            <p><strong>Telugu Word File</strong> (e.g., word/అమ్మ.html) should contain:</p>
+            <ul>
+                <li>The Telugu word as the title</li>
+                <li>English translation(s)</li>
+                <li>Links to related English pages</li>
+            </ul>
+            
+            <p><strong>English Word File</strong> (e.g., english/mother.html) should contain:</p>
+            <ul>
+                <li>The English word as the title</li>
+                <li>All Telugu translations (అమ్మ, తల్లి, మాత, etc.)</li>
+                <li>Links to each Telugu word page</li>
+            </ul>
+        </div>
+    </div>
+    
+    <script>
+        function checkMapping(teluguWord, englishWord, id) {
+            const statusSpan = document.getElementById(`status-${id}`);
+            statusSpan.textContent = 'Checking...';
+            statusSpan.className = 'status';
+            
+            // Check Telugu word file
+            const teluguPath = `word/${encodeURIComponent(teluguWord)}.html`;
+            const englishPath = `english/${englishWord}.html`;
+            
+            // Try to load Telugu word file
+            fetch(teluguPath)
+                .then(response => {
+                    if (response.ok) {
+                        return response.text();
+                    }
+                    throw new Error('File not found');
+                })
+                .then(html => {
+                    // Check if the Telugu file contains the English word
+                    if (html.toLowerCase().includes(englishWord)) {
+                        statusSpan.textContent = '✓ Telugu→English OK';
+                        statusSpan.className = 'status pass';
+                        
+                        // Now check English file
+                        return fetch(englishPath);
+                    } else {
+                        throw new Error('Mapping not found in Telugu file');
+                    }
+                })
+                .then(response => {
+                    if (response.ok) {
+                        return response.text();
+                    }
+                    throw new Error('English file not found');
+                })
+                .then(html => {
+                    // Check if the English file contains the Telugu word
+                    if (html.includes(teluguWord)) {
+                        statusSpan.textContent = '✓ Both directions OK';
+                        statusSpan.className = 'status pass';
+                    } else {
+                        statusSpan.textContent = '⚠ English→Telugu missing';
+                        statusSpan.className = 'status fail';
+                    }
+                })
+                .catch(error => {
+                    statusSpan.textContent = '✗ Files missing or broken';
+                    statusSpan.className = 'status fail';
+                    console.error(`Error checking ${teluguWord} ↔ ${englishWord}:`, error);
+                });
+        }
+        
+        // Auto-check all on page load (optional)
+        function checkAll() {
+            for (let i = 1; i <= 5; i++) {
+                setTimeout(() => {
+                    document.querySelectorAll('button')[i-1].click();
+                }, i * 500);
+            }
+        }
+    </script>
+</body>
+</html>

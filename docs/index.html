@@ -1,0 +1,360 @@
+<!DOCTYPE html>
+<html lang="te">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bharat Basha - Telugu English Dictionary | భారత భాష</title>
+    <meta name="description" content="Comprehensive Telugu-English dictionary with 54,197 authentic words. Free online Telugu dictionary with meanings and pronunciations.">
+    
+    <!-- Telugu Font Support -->
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Telugu:wght@400;700&display=swap" rel="stylesheet">
+    
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Noto Sans Telugu', -apple-system, BlinkMacSystemFont, 'Segoe UI', Arial, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background-color: #f5f5f5;
+        }
+        
+        .header {
+            background: linear-gradient(135deg, #FF9933 0%, #138808 50%, #000080 100%);
+            color: white;
+            padding: 20px 0;
+            text-align: center;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        
+        .header h1 {
+            font-size: 2.5rem;
+            margin-bottom: 10px;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+        }
+        
+        .header p {
+            font-size: 1.2rem;
+            opacity: 0.95;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        .search-section {
+            background: white;
+            padding: 40px;
+            margin: 40px auto;
+            max-width: 800px;
+            border-radius: 10px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+        }
+        
+        .search-title {
+            text-align: center;
+            font-size: 1.8rem;
+            margin-bottom: 30px;
+            color: #333;
+        }
+        
+        .search-box {
+            display: flex;
+            gap: 10px;
+            margin-bottom: 20px;
+        }
+        
+        .search-input {
+            flex: 1;
+            padding: 15px 20px;
+            font-size: 18px;
+            border: 2px solid #ddd;
+            border-radius: 5px;
+            transition: border-color 0.3s;
+            font-family: 'Noto Sans Telugu', Arial, sans-serif;
+        }
+        
+        .search-input:focus {
+            outline: none;
+            border-color: #FF9933;
+        }
+        
+        .search-btn {
+            padding: 15px 30px;
+            background: #FF9933;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            font-size: 18px;
+            cursor: pointer;
+            transition: background 0.3s;
+        }
+        
+        .search-btn:hover {
+            background: #e88a2f;
+        }
+        
+        .search-options {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            margin-bottom: 20px;
+        }
+        
+        .search-options label {
+            display: flex;
+            align-items: center;
+            gap: 5px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+        
+        .stats {
+            text-align: center;
+            color: #666;
+            font-size: 14px;
+        }
+        
+        .features {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin: 40px 0;
+        }
+        
+        .feature-card {
+            background: white;
+            padding: 30px;
+            border-radius: 10px;
+            text-align: center;
+            box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+            transition: transform 0.3s;
+        }
+        
+        .feature-card:hover {
+            transform: translateY(-5px);
+        }
+        
+        .feature-icon {
+            font-size: 3rem;
+            margin-bottom: 15px;
+        }
+        
+        .feature-title {
+            font-size: 1.3rem;
+            margin-bottom: 10px;
+            color: #333;
+        }
+        
+        .feature-desc {
+            color: #666;
+            line-height: 1.5;
+        }
+        
+        .popular-words {
+            background: white;
+            padding: 40px;
+            margin: 40px 0;
+            border-radius: 10px;
+            box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+        }
+        
+        .popular-words h2 {
+            text-align: center;
+            font-size: 2rem;
+            margin-bottom: 30px;
+            color: #333;
+        }
+        
+        .word-cloud {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 15px;
+        }
+        
+        .word-tag {
+            display: inline-block;
+            padding: 10px 20px;
+            background: #f0f0f0;
+            border-radius: 25px;
+            text-decoration: none;
+            color: #333;
+            transition: all 0.3s;
+            border: 2px solid transparent;
+        }
+        
+        .word-tag:hover {
+            background: #FF9933;
+            color: white;
+            transform: scale(1.05);
+        }
+        
+        .footer {
+            background: #333;
+            color: white;
+            text-align: center;
+            padding: 20px 0;
+            margin-top: 60px;
+        }
+        
+        .footer a {
+            color: #FF9933;
+            text-decoration: none;
+        }
+        
+        @media (max-width: 768px) {
+            .header h1 {
+                font-size: 2rem;
+            }
+            
+            .search-section {
+                padding: 20px;
+            }
+            
+            .search-box {
+                flex-direction: column;
+            }
+            
+            .search-btn {
+                width: 100%;
+            }
+            
+            .features {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header class="header">
+        <div class="container">
+            <h1>భారత భాష - Bharat Basha</h1>
+            <p>Telugu-English Dictionary | తెలుగు-ఇంగ్లీష్ నిఘంటువు</p>
+        </div>
+    </header>
+    
+    <div class="container">
+        <div class="search-section">
+            <h2 class="search-title">Search 54,197 Telugu Words</h2>
+            
+            <form id="searchForm" onsubmit="performSearch(event)">
+                <div class="search-options">
+                    <label>
+                        <input type="radio" name="searchType" value="telugu" checked>
+                        Telugu → English
+                    </label>
+                    <label>
+                        <input type="radio" name="searchType" value="english">
+                        English → Telugu
+                    </label>
+                </div>
+                
+                <div class="search-box">
+                    <input 
+                        type="text" 
+                        id="searchInput" 
+                        class="search-input" 
+                        placeholder="Enter Telugu word (ఉదా: అమ్మ) or English word..."
+                        required
+                    >
+                    <button type="submit" class="search-btn">Search</button>
+                </div>
+            </form>
+            
+            <p class="stats">
+                📚 54,197 Telugu Words | 🔤 51,924 English Entries | 🌐 100% Free & Open Source
+            </p>
+        </div>
+        
+        <div class="features">
+            <div class="feature-card">
+                <div class="feature-icon">🔍</div>
+                <h3 class="feature-title">Comprehensive Dictionary</h3>
+                <p class="feature-desc">54,197 authentic Telugu words with accurate English translations and meanings</p>
+            </div>
+            
+            <div class="feature-card">
+                <div class="feature-icon">⚡</div>
+                <h3 class="feature-title">Lightning Fast</h3>
+                <p class="feature-desc">Static site architecture ensures instant loading and search results</p>
+            </div>
+            
+            <div class="feature-card">
+                <div class="feature-icon">📱</div>
+                <h3 class="feature-title">Mobile Friendly</h3>
+                <p class="feature-desc">Perfect experience on all devices - phones, tablets, and desktops</p>
+            </div>
+        </div>
+        
+        <div class="popular-words">
+            <h2>Popular Telugu Words</h2>
+            <div class="word-cloud">
+                <a href="/word/అమ్మ.html" class="word-tag">అమ్మ (mother)</a>
+                <a href="/word/నాన్న.html" class="word-tag">నాన్న (father)</a>
+                <a href="/word/నీరు.html" class="word-tag">నీరు (water)</a>
+                <a href="/word/ప్రేమ.html" class="word-tag">ప్రేమ (love)</a>
+                <a href="/word/పుస్తకం.html" class="word-tag">పుస్తకం (book)</a>
+                <a href="/word/విద్య.html" class="word-tag">విద్య (education)</a>
+                <a href="/word/ఆహారం.html" class="word-tag">ఆహారం (food)</a>
+                <a href="/word/స్నేహం.html" class="word-tag">స్నేహం (friendship)</a>
+                <a href="/word/సూర్యుడు.html" class="word-tag">సూర్యుడు (sun)</a>
+                <a href="/word/చంద్రుడు.html" class="word-tag">చంద్రుడు (moon)</a>
+                <a href="/word/భారతదేశం.html" class="word-tag">భారతదేశం (India)</a>
+                <a href="/word/తెలుగు.html" class="word-tag">తెలుగు (Telugu)</a>
+            </div>
+        </div>
+    </div>
+    
+    <footer class="footer">
+        <div class="container">
+            <p>© 2024 Bharat Basha Dictionary | <a href="https://github.com/adityabandi/bharatbasha1947">GitHub</a></p>
+        </div>
+    </footer>
+    
+    <script>
+        function performSearch(event) {
+            event.preventDefault();
+            
+            const searchTerm = document.getElementById('searchInput').value.trim();
+            const searchType = document.querySelector('input[name="searchType"]:checked').value;
+            
+            if (!searchTerm) return;
+            
+            // Construct the URL based on search type
+            let url;
+            if (searchType === 'telugu') {
+                // Telugu word search - encode the Telugu characters
+                url = `/word/${encodeURIComponent(searchTerm)}.html`;
+            } else {
+                // English word search
+                url = `/english/${searchTerm.toLowerCase()}.html`;
+            }
+            
+            // Navigate to the word page
+            window.location.href = url;
+        }
+        
+        // Auto-detect language based on input
+        document.getElementById('searchInput').addEventListener('input', function(e) {
+            const value = e.target.value;
+            const isEnglish = /^[a-zA-Z\s]+$/.test(value);
+            
+            // Auto-select the appropriate radio button
+            if (value.length > 0) {
+                if (isEnglish) {
+                    document.querySelector('input[value="english"]').checked = true;
+                } else {
+                    document.querySelector('input[value="telugu"]').checked = true;
+                }
+            }
+        });
+    </script>
+</body>
+</html>
