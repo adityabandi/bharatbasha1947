@@ -1,4 +1,45 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-<url><loc>https://bharatbasha.pages.dev/</loc><changefreq>daily</changefreq><priority>1.0</priority></url>
+  <url>
+    <loc>https://bharatdictionary.netlify.app/</loc>
+    <lastmod>2025-06-09</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>1.0</priority>
+  </url>
+  <url>
+    <loc>https://bharatdictionary.netlify.app/word/అమ్మ.html</loc>
+    <lastmod>2025-06-09</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://bharatdictionary.netlify.app/word/నీరు.html</loc>
+    <lastmod>2025-06-09</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://bharatdictionary.netlify.app/word/ప్రేమ.html</loc>
+    <lastmod>2025-06-09</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://bharatdictionary.netlify.app/english/mother.html</loc>
+    <lastmod>2025-06-09</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://bharatdictionary.netlify.app/english/water.html</loc>
+    <lastmod>2025-06-09</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://bharatdictionary.netlify.app/english/love.html</loc>
+    <lastmod>2025-06-09</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
 </urlset>
