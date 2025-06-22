@@ -296,18 +296,18 @@
         <div class="popular-words">
             <h2>Popular Telugu Words</h2>
             <div class="word-cloud">
-                <a href="/word/అమ్మ.html" class="word-tag">అమ్మ (mother)</a>
-                <a href="/word/నాన్న.html" class="word-tag">నాన్న (father)</a>
-                <a href="/word/నీరు.html" class="word-tag">నీరు (water)</a>
-                <a href="/word/ప్రేమ.html" class="word-tag">ప్రేమ (love)</a>
-                <a href="/word/పుస్తకం.html" class="word-tag">పుస్తకం (book)</a>
-                <a href="/word/విద్య.html" class="word-tag">విద్య (education)</a>
-                <a href="/word/ఆహారం.html" class="word-tag">ఆహారం (food)</a>
-                <a href="/word/స్నేహం.html" class="word-tag">స్నేహం (friendship)</a>
-                <a href="/word/సూర్యుడు.html" class="word-tag">సూర్యుడు (sun)</a>
-                <a href="/word/చంద్రుడు.html" class="word-tag">చంద్రుడు (moon)</a>
-                <a href="/word/భారతదేశం.html" class="word-tag">భారతదేశం (India)</a>
-                <a href="/word/తెలుగు.html" class="word-tag">తెలుగు (Telugu)</a>
+                <a href="word/అమ్మ.html" class="word-tag">అమ్మ (mother)</a>
+                <a href="word/నాన్న.html" class="word-tag">నాన్న (father)</a>
+                <a href="word/నీరు.html" class="word-tag">నీరు (water)</a>
+                <a href="word/ప్రేమ.html" class="word-tag">ప్రేమ (love)</a>
+                <a href="word/పుస్తకం.html" class="word-tag">పుస్తకం (book)</a>
+                <a href="word/విద్య.html" class="word-tag">విద్య (education)</a>
+                <a href="word/ఆహారం.html" class="word-tag">ఆహారం (food)</a>
+                <a href="word/స్నేహం.html" class="word-tag">స్నేహం (friendship)</a>
+                <a href="word/సూర్యుడు.html" class="word-tag">సూర్యుడు (sun)</a>
+                <a href="word/చంద్రుడు.html" class="word-tag">చంద్రుడు (moon)</a>
+                <a href="word/భారతదేశం.html" class="word-tag">భారతదేశం (India)</a>
+                <a href="word/తెలుగు.html" class="word-tag">తెలుగు (Telugu)</a>
             </div>
         </div>
     </div>
@@ -331,10 +331,10 @@
             let url;
             if (searchType === 'telugu') {
                 // Telugu word search - encode the Telugu characters
-                url = `/word/${encodeURIComponent(searchTerm)}.html`;
+                url = `word/${encodeURIComponent(searchTerm)}.html`;
             } else {
                 // English word search
-                url = `/english/${searchTerm.toLowerCase()}.html`;
+                url = `english/${searchTerm.toLowerCase()}.html`;
             }
             
             // Navigate to the word page
