@@ -13,7 +13,7 @@ self.addEventListener('fetch', event => {
       fetch(req)
         .then(resp => resp.text())
         .then(html => {
-          const injected = html.replace('</body>', '<script src="/examples.js"></script></body>');
+          const injected = html.replace('</body>', '<script src="examples.js"></script></body>');
           return new Response(injected, { headers: resp.headers });
         })
     );
